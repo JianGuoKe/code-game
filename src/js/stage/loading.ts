@@ -1,6 +1,6 @@
 import { Stage } from 'melonjs';
 
-class TitleScreen extends Stage {
+class LoadingScreen extends Stage {
     /**
      *  action to perform on state change
      */
@@ -16,4 +16,4 @@ class TitleScreen extends Stage {
     }
 };
 
-export default TitleScreen;
+export default LoadingScreen;

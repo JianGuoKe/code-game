@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es6",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // "baseUrl": ".",
+    // "paths": {
+    //     "js/*": ["./js/*"]
+    //   }
+    "resolveJsonModule": true
+  },
+  "include": ["src/js"]
+}

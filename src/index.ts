@@ -11,24 +11,24 @@ import {
 
 import 'index.css';
 
-import TitleScreen from 'js/stage/title.js';
-import PlayScreen from 'js/stage/play.js';
-import PlayerEntity from 'js/renderables/player.js';
+import LoadingScreen from './js/stage/loading';
+import PlayScreen from './js/stage/play';
+import PlayerEntity from './js/renderables/player';
 
-import DataManifest from 'manifest.js';
+import DataManifest from './manifest';
 
 
 device.onReady(() => {
 
     // initialize the display canvas once the device/browser is ready
-    if (!video.init(1218, 562, {parent : "screen", scale : "auto"})) {
+    if (!video.init(800, 800, { parent: "screen", scale: 'auto', scaleMethod: "fit" })) {
         alert("Your browser does not support HTML5 canvas.");
         return;
     }
 
     // initialize the debug plugin in development mode.
     if (process.env.NODE_ENV === 'development') {
-        import('js/plugin/debug/debugPanel.js').then((debugPlugin) => {
+        import('./js/plugin/debug/debugPanel.js').then((debugPlugin) => {
             // automatically register the debug panel
             utils.function.defer(plugin.register, this, debugPlugin.DebugPanelPlugin, "debugPanel");
         });
@@ -39,18 +39,18 @@ device.onReady(() => {
     audio.init("mp3,ogg");
 
     // allow cross-origin for image/texture loading
-    loader.crossOrigin = "anonymous";
+    // loader.crossOrigin = "anonymous";
+    state.set(state.LOADING, new LoadingScreen());
 
     // set and load all resources.
-    loader.preload(DataManifest, function() {
+    loader.preload(DataManifest, function () {
         // set the user defined game stages
-        state.set(state.MENU, new TitleScreen());
         state.set(state.PLAY, new PlayScreen());
 
         // add our player entity in the entity pool
-        pool.register("mainPlayer", PlayerEntity);
+        // pool.register("mainPlayer", PlayerEntity);
 
         // Start the game.
-        state.change(state.PLAY);
+        state.change(state.PLAY, true);
     });
 });
