@@ -1,12 +1,40 @@
 {
-    "activeFile": "",
+    "activeFile": "tilesets/Small Grass.tmx",
     "expandedProjectPaths": [
+        "tilesets",
+        "objects",
+        "characters",
+        "."
     ],
     "fileStates": {
+        "objects/Mushrooms, Flowers, Stones.tsx": {
+            "scaleInDock": 2
+        },
+        "tilesets/Ground tiles/new tiles/Grass tile layers.tsx": {
+            "scaleInDock": 2
+        },
+        "tilesets/Ground tiles/new tiles/Grass tiles v.2.tsx": {
+            "scaleInDock": 3
+        },
+        "tilesets/Small Grass.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 59.25,
+                "y": 177
+            }
+        },
+        "tilesets/Water.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
     },
     "openFiles": [
+        "tilesets/Small Grass.tmx"
     ],
     "project": "game.tiled-project",
     "recentFiles": [
+        "tilesets/Small Grass.tmx",
+        "tilesets/Water.tsx"
     ]
 }

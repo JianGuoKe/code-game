@@ -1,4 +1,4 @@
-import { Stage, game, level, audio } from 'melonjs';
+import { Stage, game, level, audio, TextureAtlas, loader } from 'melonjs';
 import PremiumCharakterSprite from '../renderables/PremiumCharakterSprite';
 
 class SequenceScreen extends Stage {
@@ -7,6 +7,7 @@ class SequenceScreen extends Stage {
      */
     onResetEvent() {
 
+
         // load the new level
         level.load('Small Grass', {
             "container": game.world,
@@ -14,12 +15,13 @@ class SequenceScreen extends Stage {
                 // viewport width and height
                 var w = game.viewport.width;
                 var h = game.viewport.height;
-                // add the Cap Guy
+
+                // add the sprite
                 game.world.addChild(new PremiumCharakterSprite(w / 2, h / 2) as any, 2);
 
+                // 播放背景音乐
                 audio.play('Red Carpet Wooden Floor', true);
-                // set the background to black
-                // game.world.backgroundColor.setColor(255, 255, 255);
+
                 // force redraw
                 game.repaint();
             }

@@ -2,8 +2,11 @@
 // note : this is note a webpack manifest
 const DataManifest = [
 
+    /* sprite */
     { name: "Premium Charakter Spritesheet", type: "json", src: "./data/characters/Premium Charakter Spritesheet.json" },
     { name: "Premium Charakter Spritesheet", type: "image", src: "./data/characters/Premium Charakter Spritesheet.png" },
+
+
 
     /* map */
     { name: "Grass tiles v.2", type: "image", src: "./data/tilesets/Ground tiles/new tiles/Grass tiles v.2.png" },

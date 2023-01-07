@@ -6,7 +6,8 @@ import {
     video,
     utils,
     plugin,
-    pool
+    pool,
+    game
 } from 'melonjs';
 
 import 'index.css';
@@ -19,7 +20,7 @@ import DataManifest from './manifest';
 device.onReady(() => {
 
     // initialize the display canvas once the device/browser is ready
-    if (!video.init(960, 640, { parent: "screen", scale: '4' })) {
+    if (!video.init(320, 320, { parent: "screen", scale: 'auto' })) {
         alert("Your browser does not support HTML5 canvas.");
         return;
     }

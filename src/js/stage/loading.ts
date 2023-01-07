@@ -1,11 +1,12 @@
-import { Stage } from 'melonjs';
+import { game, Stage } from 'melonjs';
 
 class LoadingScreen extends Stage {
     /**
      *  action to perform on state change
      */
     onResetEvent() {
-        ; // TODO
+
+        game.world.backgroundColor.setColor(155, 212, 195);
     }
 
     /**

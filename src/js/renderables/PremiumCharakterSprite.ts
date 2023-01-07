@@ -18,10 +18,10 @@ class PremiumCharakterSprite extends Entity {
     );
     // create an animation using the cap guy sprites, and add as renderable
     this.renderable = texture.createAnimationFromName([
-      "Premium Charakter Spritesheet-8", "Premium Charakter Spritesheet-9",
-      "Premium Charakter Spritesheet-10", "Premium Charakter Spritesheet-11",
-      "Premium Charakter Spritesheet-12", "Premium Charakter Spritesheet-13",
-      "Premium Charakter Spritesheet-14", "Premium Charakter Spritesheet-15",
+      "Premium Charakter Spritesheet-1", "Premium Charakter Spritesheet-1",
+      "Premium Charakter Spritesheet-2", "Premium Charakter Spritesheet-3",
+      "Premium Charakter Spritesheet-4", "Premium Charakter Spritesheet-5",
+      "Premium Charakter Spritesheet-6", "Premium Charakter Spritesheet-7",
     ]);
 
     // enable this, since the entity starts off the viewport

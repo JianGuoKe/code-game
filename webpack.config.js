@@ -73,7 +73,7 @@ module.exports = {
             ]
         }),
         new FaviconsWebpackPlugin({
-            logo: './src/favicon/logo.svg', // svg works too!
+            logo: './src/favicon/logo.png', // svg works too!
             mode: 'auto', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
             devMode: 'webapp', // optional can be 'webapp' or 'light' - 'light' by default
             favicons: {
