@@ -2,10 +2,23 @@
 // note : this is note a webpack manifest
 const DataManifest = [
 
-    { name: "bg", type: "tmx", src: "./data/map/bg.tmx" },
-    { name: "desert", type: "tmx", src: "./data/map/desert.tmx" },
-    { name: "desert", type: "tsx", src: "./data/map/desert.tsx" },
-    { name: "tmw_desert_spacing", type: "image", src: "./data/map/tmw_desert_spacing.png" },
+    { name: "Premium Charakter Spritesheet", type: "json", src: "./data/characters/Premium Charakter Spritesheet.json" },
+    { name: "Premium Charakter Spritesheet", type: "image", src: "./data/characters/Premium Charakter Spritesheet.png" },
+
+    /* map */
+    { name: "Grass tiles v.2", type: "image", src: "./data/tilesets/Ground tiles/new tiles/Grass tiles v.2.png" },
+    { name: "Water", type: "image", src: "./data/tilesets/Water.png" },
+    { name: "Grass tile layers", type: "image", src: "./data/tilesets/Ground tiles/new tiles/Grass tile layers.png" },
+    { name: "Mushrooms, Flowers, Stones", type: "image", src: "./data/objects/Mushrooms, Flowers, Stones.png" },
+
+    { name: "Grass tiles v.2", type: "tsx", src: "./data/tilesets/Ground tiles/new tiles/Grass tiles v.2.tsx" },
+    { name: "Water", type: "tsx", src: "./data/tilesets/Water.tsx" },
+    { name: "Grass tile layers", type: "tsx", src: "./data/tilesets/Ground tiles/new tiles/Grass tile layers.tsx" },
+    { name: "Mushrooms, Flowers, Stones", type: "tsx", src: "./data/objects/Mushrooms, Flowers, Stones.tsx" },
+
+    { name: "Small Grass", type: "tmx", src: "./data/tilesets/Small Grass.tmx" },
+
+    { name: "Red Carpet Wooden Floor", type: "audio", src: "./data/soundtrack/" },
 
     /* Bitmap Text */
     {

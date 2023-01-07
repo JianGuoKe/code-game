@@ -1,9 +1,10 @@
 {
+  "name": "code-game",
+  "description": "编程启蒙游戏课",
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --mode=development --config webpack.config.js",
-    "build": "webpack --mode=production --config webpack.config.js",
-    "tsc": "tsc"
+    "build": "webpack --mode=production --config webpack.config.js"
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
