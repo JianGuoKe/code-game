@@ -1,14 +1,23 @@
 const path = require('path')
-const fs = require("fs")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 require("@babel/register")
 
 module.exports = {
-    entry: ['@babel/polyfill', './src/index.ts'],
+    entry: ['@babel/polyfill', './src/index.tsx'],
     module: {
         rules: [
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        //     name: (dev || noHash) ? '[name].[ext]' : '[name].[contenthash].[ext]',
+                        limit: 2048
+                    }
+                }
+            },
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
@@ -44,6 +53,10 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
+                {
+                    from: 'node_modules/scratch-blocks/media',
+                    to: './data/media'
+                },
                 {
                     from: './src/data',
                     to: './data',

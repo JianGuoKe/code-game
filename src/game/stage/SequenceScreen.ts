@@ -2,11 +2,14 @@ import { Stage, game, level, audio, TextureAtlas, loader } from 'melonjs';
 import PremiumCharakterSprite from '../renderables/PremiumCharakterSprite';
 
 class SequenceScreen extends Stage {
+
+
     /**
      *  action to perform on state change
      */
     onResetEvent() {
 
+        game.world.backgroundColor.setColor(155, 212, 195);
 
         // load the new level
         level.load('Small Grass', {
@@ -24,6 +27,7 @@ class SequenceScreen extends Stage {
 
                 // force redraw
                 game.repaint();
+
             }
         });
     }

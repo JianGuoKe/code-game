@@ -5,6 +5,8 @@
     "module": "ESNext",
     "target": "es6",
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
     "moduleResolution": "node",
     // "baseUrl": ".",
     // "paths": {
@@ -12,5 +14,5 @@
     //   }
     "resolveJsonModule": true
   },
-  "include": ["src/js"]
+  "include": ["src/code", "src/game", "manifest.js", "src/App.tsx"]
 }
