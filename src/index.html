@@ -13,6 +13,19 @@
     <title>编程 | 坚果壳</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="screen"></div>
+    <div class="blockly"> 
+      <div id="blocklyDiv" style="height: 480px; width: 400px;"></div>
+      <xml id="toolbox" style="display: none">
+        <block type="controls_repeat_ext">
+          <value name="TIMES">
+            <shadow type="math_number">
+              <field name="NUM">5</field>
+            </shadow>
+          </value>
+        </block>
+        <block type="play_sound"></block>
+      </xml>
+    </div>ß
   </body>
 </html>

@@ -1,8 +1,9 @@
 
 import { audio, loader, state, device, video, utils, plugin } from "melonjs";
-import LoadingScreen from "./stage/loading";
-import SequenceScreen from "./stage/SequenceScreen";
-import DataManifest from "../../manifest";
+import LoadingScreen from "./game/stage/loading";
+import SequenceScreen from "./game/stage/SequenceScreen";
+import DataManifest from "../manifest";
+import * as serviceWorker from './serviceWorker';
 
 device.onReady(() => {
   // initialize the display canvas once the device/browser is ready
@@ -13,7 +14,7 @@ device.onReady(() => {
 
   // initialize the debug plugin in development mode.
   if (process.env.NODE_ENV === "development") {
-    import("./plugin/debug/debugPanel.js").then((debugPlugin) => {
+    import("./game/plugin/debug/debugPanel.js").then((debugPlugin) => {
       // automatically register the debug panel
       utils.function.defer(
         plugin.register,
@@ -43,3 +44,8 @@ device.onReady(() => {
     state.change(state.PLAY, true);
   });
 });
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();

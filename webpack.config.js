@@ -54,10 +54,6 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: 'node_modules/scratch-blocks/media',
-                    to: './data/media'
-                },
-                {
                     from: './src/data',
                     to: './data',
                     filter: async (resourcePath) => {
