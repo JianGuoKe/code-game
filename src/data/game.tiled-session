@@ -5,10 +5,10 @@
     },
     "activeFile": "tilesets/Small Grass.tmx",
     "expandedProjectPaths": [
+        ".",
         "tilesets",
         "objects",
-        "characters",
-        "."
+        "characters"
     ],
     "fileStates": {
         "objects/Mushrooms, Flowers, Stones.tsx": {

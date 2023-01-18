@@ -1,6 +1,6 @@
-import { Entity, game, loader, Sprite, TextureAtlas, video } from 'melonjs';
+import { Entity, game, input, loader, Sprite, TextureAtlas, video } from 'melonjs';
 
-export enum SprintDirection {
+export enum SpriteDirection {
   front = 'front',
   after = 'after',
   left = 'left',
@@ -8,6 +8,7 @@ export enum SprintDirection {
 }
 
 class PremiumCharakterSprite extends Entity {
+  lastDirection: SpriteDirection;
 
   /**
    * constructor
@@ -37,11 +38,11 @@ class PremiumCharakterSprite extends Entity {
     // define a basic walking animatin
     const animations = [
       'stand_front', 'stand_after', 'stand_left', 'stand_right',
-      'walk_front', 'walk_after', 'walk_left', 'walk_right',
-      'run_front', 'run_after', 'run_left', 'run_right',
-      'dig_front', 'dig_after', 'dig_left', 'dig_right',
-      'cut_front', 'cut_after', 'cut_left', 'cut_right',
-      'water_front', 'water_after', 'water_left', 'water_right',
+      'walk_front', 'walk_after', 'walk_right', 'walk_left',
+      'run_front', 'run_after', 'run_right', 'run_left',
+      'dig_front', 'dig_after', 'dig_right', 'dig_left',
+      'cut_front', 'cut_after', 'cut_right', 'cut_left',
+      'water_front', 'water_after', 'water_right', 'water_left',
     ];
 
     for (let i = 0; i < 24; i++) {
@@ -53,29 +54,66 @@ class PremiumCharakterSprite extends Entity {
       (this.renderable as Sprite).addAnimation(animations[i], index);
     }
     // set as default
-    (this.renderable as Sprite).setCurrentAnimation("dig_front");
+    (this.renderable as Sprite).setCurrentAnimation("stand_front");
 
     // enable this, since the entity starts off the viewport
     this.alwaysUpdate = true;
+
+    // enable keyboard
+    input.bindKey(input.KEY.A, "left");
+    input.bindKey(input.KEY.D, "right");
+    input.bindKey(input.KEY.W, "up");
+    input.bindKey(input.KEY.S, "down");
+
+    input.bindKey(input.KEY.SHIFT, "run");
+
+    input.bindKey(input.KEY.Z, "dig");
+    input.bindKey(input.KEY.X, "cut");
+    input.bindKey(input.KEY.C, "water");
   }
 
   // 站立
-  stand(direction = SprintDirection.front) {
+  stand(direction = SpriteDirection.front) {
+    if ((this.renderable as Sprite).isCurrentAnimation("stand_" + direction)) {
+      return;
+    }
+    this.lastDirection = direction;
     (this.renderable as Sprite).setCurrentAnimation("stand_" + direction);
   }
-  walk(direction = SprintDirection.front) {
+  walk(direction = SpriteDirection.front) {
+    if ((this.renderable as Sprite).isCurrentAnimation("walk_" + direction)) {
+      return;
+    }
+    this.lastDirection = direction;
     (this.renderable as Sprite).setCurrentAnimation("walk_" + direction);
   }
-  run(direction = SprintDirection.front) {
+  run(direction = SpriteDirection.front) {
+    if ((this.renderable as Sprite).isCurrentAnimation("run_" + direction)) {
+      return;
+    }
+    this.lastDirection = direction;
     (this.renderable as Sprite).setCurrentAnimation("run_" + direction);
   }
-  dig(direction = SprintDirection.front) {
+
+  dig(direction = SpriteDirection.front) {
+    if ((this.renderable as Sprite).isCurrentAnimation("dig_" + direction)) {
+      return;
+    }
+    this.lastDirection = direction;
     (this.renderable as Sprite).setCurrentAnimation("dig_" + direction);
   }
-  cut(direction = SprintDirection.front) {
+  cut(direction = SpriteDirection.front) {
+    if ((this.renderable as Sprite).isCurrentAnimation("cut_" + direction)) {
+      return;
+    }
+    this.lastDirection = direction;
     (this.renderable as Sprite).setCurrentAnimation("cut_" + direction);
   }
-  water(direction = SprintDirection.front) {
+  water(direction = SpriteDirection.front) {
+    if ((this.renderable as Sprite).isCurrentAnimation("water_" + direction)) {
+      return;
+    }
+    this.lastDirection = direction;
     (this.renderable as Sprite).setCurrentAnimation("water_" + direction);
   }
 
@@ -83,17 +121,46 @@ class PremiumCharakterSprite extends Entity {
    * update the entity
    */
   update(dt: number) {
-    // just manually change the guy position
-    // this.pos.x += 0.3 * dt;
+    if (input.isKeyPressed("left")) {
+      // this.body.force.x = -this.body.maxVel.x;
+      if (input.isKeyPressed("run")) {
+        this.run(SpriteDirection.left);
+      } else {
+        this.walk(SpriteDirection.left);
+      }
+    } else if (input.isKeyPressed("right")) {
+      // this.body.force.x = this.body.maxVel.x;
+      if (input.isKeyPressed("run")) {
+        this.run(SpriteDirection.right);
+      } else {
+        this.walk(SpriteDirection.right);
+      }
+    } else if (input.isKeyPressed("up")) {
+      // this.body.force.x = this.body.maxVel.x;
+      if (input.isKeyPressed("run")) {
+        this.run(SpriteDirection.after);
+      } else {
+        this.walk(SpriteDirection.after);
+      }
+    } else if (input.isKeyPressed("down")) {
+      // this.body.force.x = this.body.maxVel.x;
+      if (input.isKeyPressed("run")) {
+        this.run(SpriteDirection.front);
+      } else {
+        this.walk(SpriteDirection.front);
+      }
+    } else {
+      this.stand(this.lastDirection);
+    }
 
-    // // repeat once leaving the viewport
-    // if (this.pos.x >= game.viewport.width) {
-    //   this.pos.x = 0;
+    // check if we moved (an "idle" animation would definitely be cleaner)
+    // if (this.body.vel.x !== 0 || this.body.vel.y !== 0 ||
+    //   (this.renderable && (this.renderable as Sprite).isFlickering())
+    // ) {
+    //   super.update(dt);
+    //   return true;
     // }
-
-    // call the parent function  
-    return super.update(dt);
-
+    return super.update(dt);;
   }
 
   /**
