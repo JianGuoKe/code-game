@@ -1,13 +1,15 @@
 
-import { audio, loader, state, device, video, utils, plugin } from "melonjs";
+import { audio, loader, state, device, video, utils, plugin, event, input, pool } from "melonjs";
 import LoadingScreen from "./game/stage/loading";
 import SequenceScreen from "./game/stage/SequenceScreen";
 import DataManifest from "../manifest";
 import * as serviceWorker from './serviceWorker';
+import './index.less';
+import PremiumCharakterSprite from "./game/renderables/PremiumCharakterSprite";
 
 device.onReady(() => {
   // initialize the display canvas once the device/browser is ready
-  if (!video.init(320, 320, { parent: "screen", scale: "auto" })) {
+  if (!video.init(320, 320, { parent: "screen", scale: "auto", scaleMethod: "fill-max" })) {
     alert("Your browser does not support HTML5 canvas.");
     return;
   }
@@ -38,9 +40,31 @@ device.onReady(() => {
     state.set(state.PLAY, new SequenceScreen());
 
     // add our player entity in the entity pool
-    // pool.register("mainPlayer", PlayerEntity);
+    pool.register("mainPlayer", PremiumCharakterSprite);
 
-    // Start the game.
+    // add some keyboard shortcuts
+    event.on(event.KEYDOWN, (action: any, keyCode: number /*, edge */) => {
+
+      // change global volume setting
+      if (keyCode === input.KEY.PLUS) {
+        // increase volume
+        audio.setVolume(audio.getVolume() + 0.1);
+      } else if (keyCode === input.KEY.MINUS) {
+        // decrease volume
+        audio.setVolume(audio.getVolume() - 0.1);
+      }
+
+      // toggle fullscreen on/off
+      if (keyCode === input.KEY.F) {
+        if (!device.isFullscreen()) {
+          device.requestFullscreen();
+        } else {
+          device.exitFullscreen();
+        }
+      }
+    });
+
+    // Start the ga
     state.change(state.PLAY, true);
   });
 });

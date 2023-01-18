@@ -1,4 +1,5 @@
 import { Stage, game, level, audio, TextureAtlas, loader } from 'melonjs';
+import { BlocklyWorkspace } from '../renderables/BlocklyWorkspace';
 import PremiumCharakterSprite from '../renderables/PremiumCharakterSprite';
 
 class SequenceScreen extends Stage {
@@ -12,7 +13,7 @@ class SequenceScreen extends Stage {
         game.world.backgroundColor.setColor(155, 212, 195);
 
         // load the new level
-        level.load('Small Grass', {
+        level.load('Big Grass', {
             "container": game.world,
             "onLoaded": () => {
                 // viewport width and height
@@ -21,9 +22,10 @@ class SequenceScreen extends Stage {
 
                 // add the sprite
                 game.world.addChild(new PremiumCharakterSprite(w / 2, h / 2) as any, 2);
+                game.world.addChild(new BlocklyWorkspace(w - 100, 0, 100, 320));
 
                 // 播放背景音乐
-                audio.play('Red Carpet Wooden Floor', true);
+                // audio.play('Red Carpet Wooden Floor', true);
 
                 // force redraw
                 game.repaint();

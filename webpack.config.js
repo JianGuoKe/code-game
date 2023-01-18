@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 require("@babel/register")
 
 module.exports = {
-    entry: ['@babel/polyfill', './src/index.tsx'],
+    entry: ['@babel/polyfill', './src/index.ts'],
     module: {
         rules: [
             {
@@ -31,11 +31,15 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
             }
         ],
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: ['.ts', '.js', '.css', '.less'],
         modules: [
             path.resolve('./src'),
             path.resolve('./node_modules')

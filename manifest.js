@@ -20,6 +20,7 @@ const DataManifest = [
     { name: "Mushrooms, Flowers, Stones", type: "tsx", src: "./data/objects/Mushrooms, Flowers, Stones.tsx" },
 
     { name: "Small Grass", type: "tmx", src: "./data/tilesets/Small Grass.tmx" },
+    { name: "Big Grass", type: "tmx", src: "./data/tilesets/Big Grass.tmx" },
 
     { name: "Red Carpet Wooden Floor", type: "audio", src: "./data/soundtrack/" },
 

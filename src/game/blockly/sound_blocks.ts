@@ -1,3 +1,6 @@
+import * as Blockly from "blockly";
+import { javascriptGenerator } from 'blockly/javascript';
+
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -28,7 +31,7 @@ Blockly.defineBlocksWithJsonArray([
   }
 ]);
 
-Blockly.JavaScript['play_sound'] = function(block) {
+javascriptGenerator['play_sound'] = function (block: Blockly.Block) {
   let value = '\'' + block.getFieldValue('VALUE') + '\'';
   return 'MusicMaker.queueSound(' + value + ');\n';
 };

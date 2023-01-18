@@ -1,4 +1,8 @@
 {
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
     "activeFile": "tilesets/Small Grass.tmx",
     "expandedProjectPaths": [
         "tilesets",
@@ -18,9 +22,9 @@
         },
         "tilesets/Small Grass.tmx": {
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 59.25,
+                "x": 186.75,
                 "y": 177
             }
         },
@@ -29,6 +33,12 @@
             "scaleInEditor": 1
         }
     },
+    "map.height": 90,
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 160,
     "openFiles": [
         "tilesets/Small Grass.tmx"
     ],
