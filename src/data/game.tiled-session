@@ -3,29 +3,179 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "tilesets/Small Grass.tmx",
+    "activeFile": "tilesets/Class1.tmx",
     "expandedProjectPaths": [
-        ".",
         "tilesets",
+        "characters",
+        "tilesets/Ground tiles",
+        ".",
+        "tilesets/Building parts",
+        "tilesets/Ground tiles/new tiles",
         "objects",
-        "characters"
+        "objects/Trees, stumps and bushes"
     ],
+    "file.lastUsedOpenFilter": "全部文件 (*)",
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "objects/Mushrooms Flowers, Stones.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
         "objects/Mushrooms, Flowers, Stones.tsx": {
-            "scaleInDock": 2
+            "dynamicWrapping": false,
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
+        "objects/Trees stumps and bushes.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "objects/Trees, stumps and bushes.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 3
+        },
+        "tilesets/Big Grass.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1279.5,
+                "y": 719.5
+            }
+        },
+        "tilesets/Building parts/Basic Furniture.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "tilesets/Building parts/Chest.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 2
+        },
+        "tilesets/Building parts/Fence gates animation sprites.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Building parts/Fences.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Building parts/Mailbox Animation Frames.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Building parts/Paths.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Building parts/STONE PATH.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Building parts/Water tray.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "tilesets/Building parts/Wood Bridge v.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Building parts/Wood Bridge.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Building parts/Wooden House.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Building parts/door animation sprites.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Class1.tmx": {
+            "scale": 1.87921875,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 151.12663174523988,
+                "y": 192.3671738588177
+            }
+        },
+        "tilesets/Ground tiles/new tiles/Darker Grass hill tiles v.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Ground tiles/new tiles/Darker Grass tile layers 2.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 3
+        },
+        "tilesets/Ground tiles/new tiles/Darker Grass tile layers.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Ground tiles/new tiles/Darker Grass tiles v.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Ground tiles/new tiles/Darker Grass tiles with animates water.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "tilesets/Ground tiles/new tiles/Darker Soil ground tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/Darker Tall Grass hill tiles v.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "tilesets/Ground tiles/new tiles/Grass hill tiles v.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/Grass tile layers 2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
         },
         "tilesets/Ground tiles/new tiles/Grass tile layers.tsx": {
-            "scaleInDock": 2
+            "scaleInDock": 2,
+            "scaleInEditor": 2
         },
         "tilesets/Ground tiles/new tiles/Grass tiles v.2.tsx": {
-            "scaleInDock": 3
+            "dynamicWrapping": false,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/Grass tiles with animates water-export.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/Soil ground tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/Stone ground tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/Tall Grass hill tiles v.2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/blue bush tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesets/Ground tiles/new tiles/bush tiles.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 2,
+            "scaleInEditor": 3
         },
         "tilesets/Small Grass.tmx": {
             "scale": 2,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 186.75,
-                "y": 177
+                "x": 36.75,
+                "y": 152.25
             }
         },
         "tilesets/Water.tsx": {
@@ -33,18 +183,35 @@
             "scaleInEditor": 1
         }
     },
-    "map.height": 90,
+    "last.imagePath": "D:/jianguoke/code-game/src/data/objects",
+    "map.height": 20,
     "map.lastUsedFormat": "tmx",
     "map.layerDataFormat": null,
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 160,
+    "map.width": 20,
     "openFiles": [
-        "tilesets/Small Grass.tmx"
+        "tilesets/Ground tiles/new tiles/bush tiles.tsx",
+        "tilesets/Class1.tmx"
     ],
     "project": "game.tiled-project",
     "recentFiles": [
-        "tilesets/Small Grass.tmx",
-        "tilesets/Water.tsx"
-    ]
+        "tilesets/Ground tiles/new tiles/bush tiles.tsx",
+        "tilesets/Class1.tmx",
+        "tilesets/Ground tiles/new tiles/Grass tile layers 2.tsx",
+        "tilesets/Ground tiles/new tiles/Grass tile layers.tsx",
+        "tilesets/Ground tiles/new tiles/Grass tiles v.2.tsx",
+        "tilesets/Ground tiles/new tiles/Darker Soil ground tiles.tsx",
+        "tilesets/Ground tiles/new tiles/Darker Tall Grass hill tiles v.2.tsx",
+        "tilesets/Ground tiles/new tiles/Grass hill tiles v.2.tsx",
+        "tilesets/Ground tiles/new tiles/Darker Grass tile layers 2.tsx",
+        "tilesets/Ground tiles/new tiles/Darker Grass hill tiles v.2.tsx",
+        "tilesets/Ground tiles/new tiles/Darker Grass tile layers.tsx",
+        "tilesets/Ground tiles/new tiles/Darker Grass tiles v.2.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
 }

@@ -1,11 +1,11 @@
 
 import { audio, loader, state, device, video, utils, plugin, event, input, pool } from "melonjs";
-import LoadingScreen from "./game/stage/loading";
-import SequenceScreen from "./game/stage/SequenceScreen";
-import DataManifest from "../manifest";
+import LoadingScreen from "./scripts/stage/loading";
+import SequenceClass from "./scripts/stage/SequenceClass";
+import DataManifest from "./manifest";
 import * as serviceWorker from './serviceWorker';
 import './index.less';
-import PremiumCharakterSprite from "./game/renderables/PremiumCharakterSprite";
+import PremiumCharakterSprite from "./scripts/renderables/PremiumCharakterSprite";
 
 device.onReady(() => {
   // initialize the display canvas once the device/browser is ready
@@ -16,7 +16,7 @@ device.onReady(() => {
 
   // initialize the debug plugin in development mode.
   if (process.env.NODE_ENV === "development") {
-    import("./game/plugin/debug/debugPanel.js").then((debugPlugin) => {
+    import("./scripts/plugin/debug/debugPanel.js").then((debugPlugin) => {
       // automatically register the debug panel
       utils.function.defer(
         plugin.register,
@@ -37,7 +37,7 @@ device.onReady(() => {
   // set and load all resources.
   loader.preload(DataManifest, function () {
     // set the user defined game stages
-    state.set(state.PLAY, new SequenceScreen());
+    state.set(state.PLAY, new SequenceClass());
 
     // add our player entity in the entity pool
     pool.register("mainPlayer", PremiumCharakterSprite);

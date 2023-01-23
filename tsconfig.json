@@ -14,5 +14,11 @@
     //   }
     "resolveJsonModule": true
   },
-  "include": ["src/code", "src/game", "manifest.js", "src/App.tsx", "src/index.ts"]
+  "include": [
+    "src/code",
+    "src/scripts",
+    "src/manifest.js",
+    "src/App.tsx",
+    "src/index.ts"
+  ]
 }

@@ -2,7 +2,8 @@ import { Stage, game, level, audio, TextureAtlas, loader } from 'melonjs';
 import { BlocklyWorkspace } from '../renderables/BlocklyWorkspace';
 import PremiumCharakterSprite from '../renderables/PremiumCharakterSprite';
 
-class SequenceScreen extends Stage {
+// 第一课：序列
+class SequenceClass extends Stage {
 
 
     /**
@@ -22,7 +23,7 @@ class SequenceScreen extends Stage {
 
                 // add the sprite
                 game.world.addChild(new PremiumCharakterSprite(w / 2, h / 2) as any, 2);
-                game.world.addChild(new BlocklyWorkspace(w - 100, 0, 100, 320));
+                game.world.addChild(new BlocklyWorkspace(w - 100, 0, 100, h));
 
                 // 播放背景音乐
                 // audio.play('Red Carpet Wooden Floor', true);
@@ -35,4 +36,4 @@ class SequenceScreen extends Stage {
     }
 };
 
-export default SequenceScreen;
+export default SequenceClass;

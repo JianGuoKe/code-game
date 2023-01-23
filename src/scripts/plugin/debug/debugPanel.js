@@ -131,9 +131,9 @@ var fontImageSource = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAY
 
 class DebugPanel extends me.Renderable {
     /** @private */
-    constructor(debugToggle = me.input.KEY.S) {
+    constructor(debugToggle = me.input.KEY.F2) {
         // call the super constructor
-        super(0, 0, me.video.renderer.getWidth(), DEBUG_HEIGHT );
+        super(0, 0, me.video.renderer.getWidth(), DEBUG_HEIGHT);
 
         // enable collision and event detection
         this.isKinematic = false;
@@ -211,11 +211,11 @@ class DebugPanel extends me.Renderable {
         // clickable areas
         var hash = me.utils.getUriFragment();
         var size = 10 * this.mod;
-        this.checkbox.renderHitBox = new me.Rect(250, 2,  size, size);
+        this.checkbox.renderHitBox = new me.Rect(250, 2, size, size);
         this.checkbox.renderHitBox.selected = hash.hitbox || false;
         this.checkbox.renderVelocity = new me.Rect(250, 17, size, size);
         this.checkbox.renderVelocity.selected = hash.velocity || false;
-        this.checkbox.renderQuadTree = new me.Rect(410, 2,  size, size);
+        this.checkbox.renderQuadTree = new me.Rect(410, 2, size, size);
         this.checkbox.renderVelocity.selected = hash.quadtree || false;
 
         // add some keyboard shortcuts
@@ -227,9 +227,9 @@ class DebugPanel extends me.Renderable {
         });
 
         // some internal string/length
-        this.help_str        = "["+String.fromCharCode(32 + this.debugToggle)+"]show/hide";
-        this.help_str_len    = this.font.measureText(this.help_str).width;
-        this.fps_str_len     = this.font.measureText("00/00 fps").width;
+        this.help_str = "[" + String.fromCharCode(32 + this.debugToggle) + "]show/hide";
+        this.help_str_len = this.font.measureText(this.help_str).width;
+        this.fps_str_len = this.font.measureText("00/00 fps").width;
         this.memoryPositionX = 325 * this.mod;
 
         // resize the panel if the browser is resized
@@ -514,7 +514,7 @@ class DebugPanel extends me.Renderable {
     }
 
     /** @private */
-    onClick(e)  {
+    onClick(e) {
         // check the clickable areas
         if (this.checkbox.renderHitBox.contains(e.gameX, e.gameY)) {
             this.checkbox.renderHitBox.selected = !this.checkbox.renderHitBox.selected;
@@ -566,8 +566,8 @@ class DebugPanel extends me.Renderable {
     /** @private */
     drawMemoryGraph(renderer, endX) {
         if (window.performance && window.performance.memory) {
-            var usedHeap  =  me.Math.round(window.performance.memory.usedJSHeapSize / 1048576, 2);
-            var totalHeap =  me.Math.round(window.performance.memory.totalJSHeapSize / 1048576, 2);
+            var usedHeap = me.Math.round(window.performance.memory.usedJSHeapSize / 1048576, 2);
+            var totalHeap = me.Math.round(window.performance.memory.totalJSHeapSize / 1048576, 2);
             var maxLen = ~~(endX - this.memoryPositionX - 5);
             var len = maxLen * (usedHeap / totalHeap);
 
@@ -597,7 +597,7 @@ class DebugPanel extends me.Renderable {
         renderer.setGlobalAlpha(0.5);
         renderer.setColor("black");
         renderer.fillRect(
-            this.left,  this.top,
+            this.left, this.top,
             this.width, this.height
         );
         renderer.setGlobalAlpha(1.0);
@@ -609,7 +609,7 @@ class DebugPanel extends me.Renderable {
         this.font.draw(renderer, "#draws   : " + me.game.world.drawCount, 5 * this.mod, 10 * this.mod);
 
         // debug checkboxes
-        this.font.draw(renderer, "?hitbox   [" + (this.checkbox.renderHitBox.selected ? "x" : " ") + "]",   75 * this.mod, 2 * this.mod);
+        this.font.draw(renderer, "?hitbox   [" + (this.checkbox.renderHitBox.selected ? "x" : " ") + "]", 75 * this.mod, 2 * this.mod);
         this.font.draw(renderer, "?velocity [" + (this.checkbox.renderVelocity.selected ? "x" : " ") + "]", 75 * this.mod, 10 * this.mod);
 
         this.font.draw(renderer, "?QuadTree [" + (this.checkbox.renderQuadTree.selected ? "x" : " ") + "]", 150 * this.mod, 2 * this.mod);
